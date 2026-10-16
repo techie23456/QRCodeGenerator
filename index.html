@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <br>
+  <input type="text" id="myText" style="width: 300px;"/><pre></pre><button id="btn" onclick="extractText()">Generate  QRCode</button><br><br><br>
+  <div id="qr"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    function extractText() {
+
+         const qr = document.getElementById("qr");
+
+            // Clear previous QR code on every click
+            qr.innerHTML = "";
+    
+    const text = document.getElementById("myText").value;
+   // document.getElementById("result").textContent = text;
+
+   new QRCode(document.getElementById("qr"), {
+      text: text,
+      width: 300,
+      height: 300
+    });
+
+}
+  </script>
+</body>
+</html>
